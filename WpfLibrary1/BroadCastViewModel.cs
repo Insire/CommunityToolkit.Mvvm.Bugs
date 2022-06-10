@@ -8,8 +8,8 @@ namespace WpfLibrary1
     [ObservableRecipient]
     internal sealed partial class BroadCastViewModel : ObservableObject
     {
+        [NotifyPropertyChangedRecipients]
         [ObservableProperty]
-        [AlsoBroadcastChange]
         private object _property;
     }
 

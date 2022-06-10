@@ -10,7 +10,7 @@ namespace WpfApp1
     public sealed partial class AlsoBroadcastChangeNotGenerated : ObservableValidator
     {
         [ObservableProperty]
-        [AlsoBroadcastChange]
+        [NotifyPropertyChangedRecipients]
         [Display(Name = "Is static")]
         private object? _someProperty;
     }
