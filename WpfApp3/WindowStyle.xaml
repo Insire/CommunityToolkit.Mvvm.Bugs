@@ -4,7 +4,7 @@
                     xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
                     xmlns:wpfapp3="clr-namespace:WpfApp3">
 
-    <Style x:Key="CustomWindowStyle" TargetType="{x:Type wpfapp3:MaterialWindow}" BasedOn="{StaticResource {x:Type Window}}">
+    <Style x:Key="CustomWindowStyle" TargetType="{x:Type Window}" BasedOn="{StaticResource {x:Type Window}}">
         <Setter Property="WindowChrome.WindowChrome">
             <Setter.Value>
                 <WindowChrome CaptionHeight="30"
@@ -80,5 +80,18 @@
                 </ControlTemplate>
             </Setter.Value>
         </Setter>
+        <Style.Triggers>
+            <Trigger Property="WindowState" Value="Maximized">
+                <Setter Property="Margin" Value="0" />
+            </Trigger>
+            <!--
+                #1823 try to fix another nasty issue
+                WindowState = Maximized
+                ResizeMode = NoResize
+            -->
+            <Trigger Property="ResizeMode" Value="NoResize">
+                <Setter Property="Margin" Value="0" />
+            </Trigger>
+        </Style.Triggers>
     </Style>
 </ResourceDictionary>

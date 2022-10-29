@@ -1,12 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using ControlzEx;
 
 namespace WpfApp3
 {
-    public class MaterialWindow : ControlzEx.WindowChromeWindow
+    public class MaterialWindow : WindowChromeWindow
     {
     }
 }
